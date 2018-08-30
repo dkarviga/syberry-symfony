@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% include 'settings/includedblock.html.twig' %}
+
+    <b>Value: </b> {{ value | raw }}
+    <br/>
+    <a href="{{ path('get-json') }}">Get Json</a>
+
+    <br/>
+
+    {{ setting('version') }}
+    <br/>
+    {{ 'version' | setting }}
+    <br />
+
+
+    {% embed 'settings/embeddedblock.html.twig' with {'foo' : "My foo value"}%}
+        {% block topline %}
+            Custom top line
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

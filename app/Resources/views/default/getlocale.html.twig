@@ -1,0 +1,11 @@
+<p>From controller: {{ locale }}</p>
+
+<p>From global variable: {{ app.request.locale }}</p>
+
+{% transchoice count with {'%name%': userName} %}
+    %name%, there are some apples
+{% endtranschoice %}
+
+<p>
+    {{ 'version' | trans }}
+</p>
